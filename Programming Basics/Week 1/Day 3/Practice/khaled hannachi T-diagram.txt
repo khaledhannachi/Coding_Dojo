@@ -1,0 +1,37 @@
+snippet 1
+  function             value
+   hello               hello                      //hello dojo;
+snippet 2:
+  function         var       value    return
+   hello                                 15
+                             dojo
+                   hello     hello()              //result is 15;
+snippet 3:
+  function         var       value    return
+ numplus(num)                           18
+                              3+15
+                   result      3                   //result is 18;
+snippet 4:
+  function         var        value    return
+                     15                    10        //10, 15;
+snippet 5:
+ var        value    return
+ 15                    10                             //20, 15;
+snippet 6:
+ var        value    return
+num          3       6
+             5        10                               //result is 15
+snippet 7:
+ var        value    return
+num1, num2        2,3       2+3
+num1, num2        3,5      3+5                           //result is 5, 8
+snippet 8:
+ var        value    return
+num1, num2        2,3       2+3
+num1, num2        3,5      3+5                           //result is 5, 8
+snippet 9:
+ var        value    return
+num1, num2        2,3       2+3                       //result is 13
+snippet 10:
+ var        value    return
+num1, num2  2,3       5+6+8                           //result is 19
