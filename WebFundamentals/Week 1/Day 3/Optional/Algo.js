@@ -16,8 +16,7 @@ whatToBring += "and a smile!";
     
 console.log(whatToBring);
 
-// i should bring sunglasses and a smile!, // i should bring a coat and a smile!
-
+// i should bring: sunglasses, a coat and a smile!
 for(var i=10; i>0; i--) {
     if(i != 2) {
       console.log(i);
@@ -34,7 +33,7 @@ for(var i=10; i>0; i--) {
 var countPositives = 0;
 var numbers = [3, 4, -2, 7, 16, -8, 0];
     
-if(numbers[0]>0){
+if(numbers[0]>=0){
     countPositives++
 }
     
