@@ -1,0 +1,43 @@
+*{
+    margin: 0px;   
+    padding: 0px;
+
+}
+.container{
+    display: flex;
+    background-color: gray;
+    width: 400px;
+    height: 600px;
+    flex-direction: column;
+    padding: 25px;
+
+}
+.blocks1{
+    display: flex;
+    background-color: aqua;
+    width: 350px;
+    height: 300px;
+    margin: 20px;
+}
+.blocks2{
+    display: flex;
+    background-color: blueviolet;
+    width: 350px;
+    height: 300px;
+    margin: 20px;
+}
+.blocks3{
+    display: flex;
+    background-color: aliceblue;
+    width: 350px;
+    height: 300px;
+    margin: 10px;
+}
+img {
+    height: 80px;
+    width: 80px;
+    margin: 20px;
+}
+h1{
+    text-align: center;
+}
