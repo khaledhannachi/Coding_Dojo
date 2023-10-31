@@ -1,0 +1,9 @@
+.block {
+    height: 50px;
+    width: 200px;
+    background-color:red;
+    border: 1px dotted black;
+}
+img{
+    width: 250px;
+}
