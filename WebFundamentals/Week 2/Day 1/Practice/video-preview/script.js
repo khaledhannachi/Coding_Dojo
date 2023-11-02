@@ -1,10 +1,10 @@
 console.log("page loaded...");
 
-function playVideo(vid) {
-  vid.play();
+function playVideo(element) {
+  element.play();
 }
 
-function pauseVideo(vid) {
-  vid.pause();
-  vid.currentTime = 0;
+function pauseVideo(element) {
+  element.pause();
+  element.currentTime = 0;
 }

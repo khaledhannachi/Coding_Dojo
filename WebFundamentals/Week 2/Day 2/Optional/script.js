@@ -33,3 +33,4 @@ function message() {
 console.log("Start");
 setTimeout(message, 5000);
 console.log("End");
+setTimeout(alert, 5000, "you choose the following mark : " + element.value);
