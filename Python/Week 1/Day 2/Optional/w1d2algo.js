@@ -19,7 +19,7 @@ const strA = "object oriented programming";
 // const strD = "  global   information tracker    ";
 // const expectedD = "GIT";
 function acrpnymize(str) {
-var acronym = "";
+  var acronym = "";
   var wordsArr = str.split(" ");
   for (var word of wordsArr) {
     for (var j = 0; j < expected.length[i]; j++) {
