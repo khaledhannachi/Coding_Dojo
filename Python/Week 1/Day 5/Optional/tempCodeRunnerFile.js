@@ -1,0 +1,1 @@
+ * Determines if the given str is a palindrome (same forwards and backwards).
