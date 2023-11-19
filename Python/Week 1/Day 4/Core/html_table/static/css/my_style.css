@@ -1,0 +1,30 @@
+*{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px;
+}
+
+td {
+    border: 2px solid #000000;
+    padding: 8px;
+    text-align: center;
+    font-size: medium;
+    font-weight: 400;
+    color: black;
+}
+
+th {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    color: black;
+
+}
