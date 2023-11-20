@@ -11,8 +11,8 @@ class BankAccount:
         if self.balance >= amount:
             self.balance -= amount
         else:
-            print("Insufficient funds: Charging a $5 fee")
             self.balance -= 5
+            print("Insufficient funds: Charging a $5 fee")
         return self
 
     def display_account_info(self):
@@ -23,6 +23,7 @@ class BankAccount:
         if self.balance > 0:
             interest = self.balance * self.int_rate
             self.balance += interest
+
         return self
 
 
@@ -42,6 +43,7 @@ class User:
 
     def display_user_balance(self):
         print(f"User: {self.name}, Email: {self.email}")
+
         self.account.display_account_info()
         return self
 
@@ -51,16 +53,12 @@ class User:
         return self
 
 
-# Example Usage:
-user1 = User("Alice", "alice@email.com")
-user2 = User("Bob", "bob@email.com")
+user1 = User("lazher", "lazher@email.com")
+user2 = User("amen", "amen@email.com")
 
 user1.make_deposit(500).make_withdrawal(200).display_user_balance()
-# Output: User: Alice, Email: alice@email.com\nBalance: $300
 
 user2.make_deposit(1000).make_withdrawal(100).display_user_balance()
-# Output: User: Bob, Email: bob@email.com\nBalance: $900
+
 
 user1.transfer_money(user2, 50).display_user_balance()
-# Output: User: Alice, Email: alice@email.com\nBalance: $250
-# User: Bob, Email: bob@email.com\nBalance: $950
