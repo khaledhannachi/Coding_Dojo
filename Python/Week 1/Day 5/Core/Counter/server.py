@@ -8,7 +8,7 @@ app.secret_key = "your_secret_key"
 def main():
     if session["counter"]:
         session["counter"] += 1
-    return render_template("index.html", counter=session["counter"])
+    return render_template("index.html")
 
 
 @app.route("/destroy_session ")
@@ -17,7 +17,7 @@ def destroy_session():
     return redirect("/")
 
 
-@app.route("/")
+@app.route("/reset")
 def reset():
     # Reset the counter to 0
     session["counter"] = 0

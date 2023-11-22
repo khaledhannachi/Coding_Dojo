@@ -1,0 +1,12 @@
+*SELECT * FROM dojos_and_ninjas_schema.dojos;
+
+*INSERT INTO dojos (name) VALUES('zen'), ('yen'),('jojo');
+
+*DELETE FROM dojos WHERE id;
+
+*INSERT INTO dojos (name) VALUES('zen'), ('yen'),('jojo');
+
+
+
+*INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES('jenn', 'fenn', 24, 1), ('sven', 'denn', 27, 1),
+('you', 'too', 19, 1);
