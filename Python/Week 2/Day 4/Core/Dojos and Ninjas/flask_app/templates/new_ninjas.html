@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new ninjas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container d-flex justify-content-center col-8 mt-5 ">
+        <form action="/create" method="post" class="bg-dark p-4 d-flex flex-column gap-2 ">
+            
+            <h1 class="text-primary">NEW Ninja</h1>
+            <label for="textname" class="form-label text-light">Dojo:</label>
+            <select class="form-select" name="dojo_id">
+              {%for dojo in all_dojos%}
+              <option value="{{dojo.id}}"  >{{dojo.name}}</option>
+              
+              {%endfor%}
+                
+            </select>
+            
+              <label for="textname" class="form-label text-light">First Name:</label>
+              <input type="text" class="form-control "  aria-describedby="emailHelp" name="first_name">
+              <label for="textname" class="form-label text-light">Last Name:</label>
+              <input type="text" class="form-control "  aria-describedby="emailHelp" name="last_name">
+              <label for="textname" class="form-label text-light">Age:</label>
+              <input type="text" class="form-control "  aria-describedby="emailHelp" name="age">
+            
+            
+            <button type="submit" class="btn btn-primary mt-3 w-50 text-dark">Add Ninja</button>
+          </form>
+          
+
+    </div>
+</body>
+</html>
