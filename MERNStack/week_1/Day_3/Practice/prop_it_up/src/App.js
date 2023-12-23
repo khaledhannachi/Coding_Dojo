@@ -30,7 +30,8 @@ function App() {
     <div className="App">
        <PersonCard person={person}/>
     </div>
-  );
+  )
+  
 }
 
 export default App;
