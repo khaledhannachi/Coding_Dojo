@@ -30,6 +30,7 @@ const Add = ({boxes, setBoxes}) => {
               <span className="text-gray-700">Color</span>
               <input
               onChange={(e)=>{setBackground(e.target.value)}}
+              value={background}
                 type="text"
                 className="
                   w-1/2 
@@ -53,6 +54,7 @@ const Add = ({boxes, setBoxes}) => {
               <span className="text-gray-700">Width</span>
               <input
               onChange={(e)=>{setWidth (e.target.value)}}
+              value={width}
                 type="text"
                 className="
                   w-1/2 
@@ -76,6 +78,7 @@ const Add = ({boxes, setBoxes}) => {
               <span className="text-gray-700">Height</span>
               <input
               onChange={(e)=>{setHeight(e.target.value)}}
+              value={height}
                 type="text"
                 className="
                   w-1/2 
