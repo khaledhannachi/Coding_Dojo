@@ -1,29 +1,28 @@
-import React from 'react';
+import React, { useState } from "react";
 
 const Display = ({ tabs }) => {
-  const onClickHandler = (e, value) => {
-    alert(value);
+  const [selectedTab, setSelectedTab] = useState(0);
+
+  const onClickHandler = (index) => {
+    setSelectedTab(index);
   };
 
   return (
-    <div className='flex'>
-      {tabs.map((tab, index) => (
-        <div key={index} className="flex gap-5 m-auto">
-          <div className="flex flex-col items-center">
-            <button
-              onClick={(e) => {
-                onClickHandler(e, tab.content);
-              }}
-              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l w-40 mt-5"
-            >
-              Tab {index + 1}
-            </button>
-            <div className="border-t border-gray-300 mt-2 p-2">
-              <h5 key={index}>{tab.content}</h5>
-            </div>
-          </div>
-        </div>
-      ))}
+    <div className="flex flex-col">
+      <div  className="flex m-auto justify-center">
+      <button onClick={() => onClickHandler(0)} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l w-40 mt-5">
+        Tab 1
+      </button>
+      <button onClick={() => onClickHandler(1)} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l w-40 mt-5">
+        Tab 2
+      </button>
+      <button onClick={() => onClickHandler(2)} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l w-40 mt-5">
+        Tab 3
+      </button>
+      </div>
+      <div className="flex gap-5 m-auto">
+            <h5>{tabs[selectedTab].content}</h5>
+      </div>
     </div>
   );
 };
