@@ -4,56 +4,57 @@ import { useNavigate } from "react-router-dom";
 import Products from "./Products";
 
 const LandingPage = () => {
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [price, setPrice] = useState("");
+  // const [description, setDescription] = useState("");
+  const [product, setProduct] = useState({})
 
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const createdProduct = {
-      title,
-      price,
-      description,
-    };
+    // const createdProduct = {
+    //   title,
+    //   price,
+    //   description,
+    // };
     axios
-      .post("http://localhost:8000/api/products", createdProduct)
+      .post("http://localhost:8001/api/products", product)
       .then((res) => {
+        console.log(res)
         navigate("/products");
-        setTitle("");
-        setPrice("");
-        setDescription("");
+        setProduct({})
       })
 
       .catch((err) => console.log(err));
   };
+  const handleChange = (e) => {
+    setProduct({...product, [e.target.name]: e.target.value});
+    console.log(e.target)
+  }
 
   return (
     <div className="w-1/2 m-auto">
       <form className="flex flex-col" onSubmit={submitHandler}>
         <labe>Title : </labe>
         <input
-          value={title}
-          onChange={(e) => {
-            setTitle(e.target.value);
-          }}
+        name="title"
+          value={product.title}
+          onChange={handleChange}
           type="text"
         />
         <labe>Price : </labe>
         <input
-          value={price}
-          onChange={(e) => {
-            setPrice(e.target.value);
-          }}
+        name="price"
+          value={product.price}
+          onChange={handleChange}
           type="number"
         />
         <labe>Description : </labe>
         <input
-          value={description}
-          onChange={(e) => {
-            setDescription(e.target.value);
-          }}
+        name="description"
+          value={product.description}
+          onChange={handleChange}
           type="text"
         />
         <button>Submit</button>

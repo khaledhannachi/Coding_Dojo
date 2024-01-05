@@ -7,14 +7,14 @@ const Products = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/products")
+      .get("http://localhost:8001/api/products")
       .then((allProducts) => setProducts(allProducts.data))
       .catch((err) => console.log(err));
   }, []);
 
 // Delete
 const onDeleteProduct = (id) => {
-    axios.delete(`http://localhost:8000/api/products/${id}`)
+    axios.delete(`http://localhost:8001/api/products/${id}`)
       .then((res) => {
         console.log(res);
         const filteredArr = products.filter((eachProduct) => eachProduct._id !== id);

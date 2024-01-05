@@ -11,7 +11,7 @@ const Update = () => {
 
   // grab the product
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/products/${id}`)
+    axios.get(`http://localhost:8001/api/products/${id}`)
       .then((res) => {
         setTitle(res.data.title);
         setPrice(res.data.price);
@@ -29,7 +29,7 @@ const Update = () => {
     };
 
     axios
-      .patch(`http://localhost:8000/api/products/${id}`, updatedProduct) // Using PATCH method
+      .patch(`http://localhost:8001/api/products/${id}`, updatedProduct) // Using PATCH method
       .then(() => {
         navigate("/products");
         setTitle("");

@@ -6,7 +6,7 @@ const ShowOne = () => {
     const {id} = useParams();
     const [product, setProduct]= useState({});
     useEffect(()=>{
-        axios.get("http://localhost:8000/api/products/" + id)
+        axios.get("http://localhost:8001/api/products/" + id)
         .then (oneProduct => setProduct(oneProduct.data))
         .catch((err) => console.log(err));
     },[id]);

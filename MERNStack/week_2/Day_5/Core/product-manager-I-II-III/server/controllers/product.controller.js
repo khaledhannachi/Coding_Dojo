@@ -21,9 +21,9 @@ module.exports.findOneProduct = (req, res) =>{
 module.exports.createNewProduct = (req, res) =>{
 Product.create(req.body)
     .then((newlyCreatedProduct) =>{
-        res.json(newlyCreatedProduct)
+        res.status(201).json(newlyCreatedProduct)
 })
-    .catch((err) => res.json(err));
+    .catch((err) => res.status(400).json(err));
 
 }
 
