@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 const Dashboard = () => {
 // all state
   const [authors, setAuthors] = useState([]);
+  const [countAuthors, setCountAuthors] = useState("");
 const {id}=useParams();
 // Fetch all
   useEffect(() => {
@@ -33,13 +34,20 @@ const goToEdit = (id) =>{
     navigate(`/authors/${id}/edit`)
 };
 
+// Count all
+useEffect(() => {
+  axios
+    .get("http://localhost:8000/api/authors/count")
+    .then((count) => setCountAuthors(count.data))
+    .catch((err) => console.log(err));
+}, []);
 
   return (
     <div className="m-auto flex flex-col justify-items-center items-center p-40">
       <Link to={`/authors/${id}/new`}>
       <h1 className="text-left font-bold text-lg">Add An Author</h1>
       </Link>
-      <h1 className=" text-left font-bold text-lg">We have quotes by:</h1>
+      <h1 className=" text-left font-bold text-lg">We have quotes by {countAuthors}:</h1>
       <table className="w-1/2  border-collapse block md:table">
         <thead className="block md:table-header-group">
           <tr className="border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative ">
@@ -80,6 +88,7 @@ const goToEdit = (id) =>{
           
         </tbody>
       </table>
+      <p></p>
     </div>
   );
 };

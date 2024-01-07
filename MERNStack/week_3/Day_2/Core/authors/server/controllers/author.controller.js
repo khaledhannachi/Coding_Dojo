@@ -3,7 +3,7 @@
 const mongoose = require("mongoose");
 const Author = require("../models/authors");
 
-console.log(Author)
+// console.log(Author)
 
 //  READ ALL Author
 module.exports.findAllAuthors = (req, res) => {
@@ -50,3 +50,13 @@ module.exports.DeleteOneAuthor = (req, res) => {
         .catch((err) => res.json(err));
 };
 
+
+//  READ ALL Author
+module.exports.countAllAuthors = (req, res) => {
+    Author.find().count()
+        .then((count) => {
+         
+            res.json(count);
+        })
+        .catch((err) => res.json(err));
+};
