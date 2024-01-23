@@ -17,6 +17,10 @@ flag: {
 isIndependent: {
     type: Boolean,
     default: true,
+},
+continent:{
+    type: String,
+    required:[true,"You have to choose a continent"]
 }
 },
 { timestamps: true },

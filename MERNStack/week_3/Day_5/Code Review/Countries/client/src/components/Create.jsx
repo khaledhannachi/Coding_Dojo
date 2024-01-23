@@ -6,6 +6,8 @@ const Create = () => {
   const [name, setName] = useState("");
   const [flag, setFlag] = useState("");
   const [isIndependent, setIsIndependent] = useState(true);
+  const [continent, setContinent] = useState("");
+
   const [errors, setErrors] = useState([]);
   // FrontEnd Error
   const [nameError, setNameerror] = useState("");
@@ -18,6 +20,7 @@ const Create = () => {
       name,
       flag,
       isIndependent,
+      continent,
     };
 
     // Save in DB
@@ -25,10 +28,11 @@ const Create = () => {
       .post("http://localhost:8000/api/countries", created)
       .then((res) => {
         console.log(res);
-        navigate("/countries");
+        navigate(`/countries/${res.data._id}`);
         setName("");
         setFlag("");
         setIsIndependent(true);
+        setContinent("");
       })
       .catch((err) => {
         const errorResponse = err.response.data.errors; // Get the errors from err.response.data
@@ -96,6 +100,18 @@ const Create = () => {
               type="checkbox"
               className="text-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:border-blue-500"
             />
+            <h1 className="text-left font-bold text-lg mt-20">Continent :</h1>
+            <select
+                onChange={(e) => setContinent(e.target.value)}
+                value={continent}
+            >
+                <option value="Africa">Africa</option>
+                <option value="Asia">Asia</option>
+                <option value="North America">North America</option>
+                <option value="South America">South America</option>
+                <option value="Europe">Europe</option>
+                <option value="Australia">Australia</option>
+            </select>
           </div>
           <div className="flex justify-around gap-5">
             <button

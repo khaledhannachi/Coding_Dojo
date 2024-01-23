@@ -66,6 +66,9 @@ hite bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-m
               Independent
             </th>
             <th className="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 block md:table-cell text-center">
+              Continent
+            </th>
+            <th className="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 block md:table-cell text-center">
               Action Available
             </th>
           </tr>
@@ -87,6 +90,9 @@ hite bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-m
                 </td>
                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                  { oneCountry.isIndependent ? <h2>Yes</h2> : <h2>No</h2>}
+                </td>
+                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                <h2>{oneCountry.continent}</h2>
                 </td>
                 <td className="p-2 md:border md:border-grey-500 text-center block md:table-cell">
                   <button
