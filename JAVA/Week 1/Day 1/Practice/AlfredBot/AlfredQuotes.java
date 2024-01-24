@@ -17,12 +17,12 @@ public class AlfredQuotes {
     }
 
     public String respondBeforeAlexis(String conversation) {
-        boolean isAlexis = conversation.contains("Alexis");
-        boolean isAlfred = conversation.contains("Alfred");
+        int isAlexis = conversation.indexOf("Alexis");
+        int isAlfred = conversation.indexOf("Alfred");
 
-        if (isAlexis) {
+        if (isAlexis >-1) {
             return "Right away, sir. She certainly isn't sophisticated enough for that.";
-        } else if (isAlfred) {
+        } else if (isAlfred >-1) {
             return "At your service. As you wish, naturally.";
         } else {
             return "Right. And with that, I shall retire.";
@@ -40,9 +40,9 @@ public class AlfredQuotes {
     // Write your own AlfredQuote method using any of the String methods you have learned!
 
     public String respondBeforeBatMan(String conversation) {
-        boolean isBatman = conversation.contains("BatMan");
+        int isBatman = conversation.indexOf("BatMan");
 
-        if (isBatman) {
+        if (isBatman >-1) {
             return "Alexie and Alfred are taking a holiday. I will help you.";
         } else {
             return "We are not here.";
