@@ -9,15 +9,13 @@ public class AdminUser extends User implements HIPAACompliantUser, HIPAAComplian
     private ArrayList<String> securityIncidents;
     
     // TO DO: Implement a constructor that takes an ID and a role
-    public AdminUser() {
-		super();
-	}
-
+  
     public AdminUser(Integer employeeID, String role, ArrayList<String> securityIncidents) {
 		super();
 		this.employeeID = employeeID;
 		this.role = role;
-		this.securityIncidents = securityIncidents;
+		this.securityIncidents = new ArrayList<String>();
+		
 	}
     
     public AdminUser(Integer employeeID, String role) {
@@ -73,32 +71,36 @@ public class AdminUser extends User implements HIPAACompliantUser, HIPAAComplian
             "Datetime Submitted: %s \n,  ID: %s\n Notes: %s \n", 
             new Date(), this.id, "AUTHORIZATION ATTEMPT FAILED FOR THIS USER"
         );
-        securityIncidents.add(report);
+        this.securityIncidents.add(report);
     }
 
+	
+	@Override
+	public boolean assignPin(int pin) {
+		String numberString = Integer.toString(pin);
+	    int count = numberString.length();
+		if(count >= 6) {
+			return true;
+		}
+		else {
+			return false;
+			}
+	}
+
+	@Override
+	public boolean accessAuthorized(Integer confirmedAuthID) {
+		if(this.employeeID == confirmedAuthID) {
+			return true;
+		}
+		else {
+			this.authIncident();
+			return false;}
+	}
+    
 	@Override
 	public ArrayList<String> reportSecurityIncidents() {
 		
 		return securityIncidents;
 	}
 
-	@Override
-	public boolean assignPin(int pin) {
-		String numberString = Integer.toString(pin);
-	    int count = numberString.length();
-		if(count == 6) {
-			return true;
-		}
-		else {return false;}
-	}
-
-	@Override
-	public boolean accessAuthorized(Integer confirmedAuthID) {
-		if(this.employeeID == this.id) {
-			return true;
-		}
-		else {return false;}
-	}
-    
-    // TO DO: Setters & Getters
 }

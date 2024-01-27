@@ -5,20 +5,20 @@ import java.util.Date;
 
 public class Physician extends User implements HIPAACompliantUser {
 	private ArrayList<String> patientNotes;
-	private Integer idCopy;
+
 	// TO DO: Constructor that takes an IDcopy
 	
-	public Physician(Integer id, int pin, Integer idCopy) {
-		super(id, pin);
-		this.idCopy = idCopy;
+	public Physician(int IDcopy) {
+		super();
+		// TODO Auto-generated constructor stub
+		this.id = IDcopy;
 	}
-	public Physician(Integer id) {
-		super(id);
-		 
-	}
+
 	
     // TO DO: Implement HIPAACompliantUser!
 	
+
+
 	public void newPatientNotes(String notes, String patientName, Date date) {
         String report = String.format(
             "Datetime Submitted: %s \n", date);
@@ -39,12 +39,8 @@ public class Physician extends User implements HIPAACompliantUser {
 		this.patientNotes = patientNotes;
 	}
 
-	public Integer getIdCopy() {
-		return idCopy;
-	}
-	public void setIdCopy(Integer idCopy) {
-		this.idCopy = idCopy;
-	}
+
+	
 	@Override
 	public boolean assignPin(int pin) {
 		String numberString = Integer.toString(pin);
@@ -57,7 +53,7 @@ public class Physician extends User implements HIPAACompliantUser {
 
 	@Override
 	public boolean accessAuthorized(Integer confirmedAuthID) {
-		if(idCopy == id) {
+		if(this.getId() == confirmedAuthID) {
 			return true;
 		}
 		else {return false;}

@@ -6,7 +6,7 @@ public class Test {
         Physician doctor10 = new Physician(1);
         AdminUser roseTyler = new AdminUser(2, "Companion");
         AdminUser donnaNoble = new AdminUser(3, "Companion");
-        
+        System.out.println(doctor10.getId());
         
         // Physician Implementation Tests
         System.out.println("\n========== Physician Tests ==========\n");
