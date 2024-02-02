@@ -28,7 +28,7 @@
 		<tbody >
 			<c:forEach items="${allTravels }" var="oneTravel">
 				<tr>
-					<td>${oneTravel.expense}</td>
+					<td><a href="/travels/${oneTravel.id}">${oneTravel.expense}</a></td>
 					<td>${oneTravel.vendor}</td>
 					<td>${oneTravel.amount} $</td>
 					<td><a href="/travels/edit/${oneTravel.id }">Edit</a>

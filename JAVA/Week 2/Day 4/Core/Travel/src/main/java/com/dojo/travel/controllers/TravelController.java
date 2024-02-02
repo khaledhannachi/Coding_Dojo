@@ -54,6 +54,13 @@ public class TravelController {
 		
 	}
 	
+	@GetMapping("/{id}")
+	public String findOneTravelById(@PathVariable("id") Long id, Model model) {
+		Travel selectedTravel = travelServ.findTravelById(id);
+		model.addAttribute("travel",selectedTravel);
+		return "show.jsp";
+	}
+	
 	@DeleteMapping("/{id}")
 	public String deleteTravel(@PathVariable("id") Long id) {
 		
