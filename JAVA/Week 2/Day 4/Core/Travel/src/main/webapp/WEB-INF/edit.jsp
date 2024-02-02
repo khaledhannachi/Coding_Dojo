@@ -11,31 +11,34 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Save Travels</title>
 </head>
 <body>
 <div class="h-screen bg-gradient-to-br from-blue-600 to-indigo-600 flex justify-center items-center w-full">
-	<!-- 		Create a Burger Form -->
-		<form:form action="/burgers/${burger.id }" method="post"
-			modelAttribute="burger">
+	<!-- 		Create a Travel Form -->
+		<form:form action="/travels/${travel.id }" method="post"
+			modelAttribute="travel">
 			<input type="hidden" name="_method" value="put">
 			<form:errors path="*" />
-			<div>
-				<form:label path="burgerName">Burger Name</form:label>
-				<form:input type="text" path="burgerName" />
+			<div class:"flex">
+				<form:label path="expense">Expense</form:label>
+				<form:input type="text" path="expense" />
 			</div>
-			<div>
-				<form:label path="restaurantName">Restaurant Name</form:label>
-				<form:input type="text" path="restaurantName" />
+			
+			<div class:"flex">
+				<form:label path="vendor">Vendor</form:label>
+				<form:input type="text" path="vendor" />
 			</div>
-			<div>
-				<form:label path="rating">Rating</form:label>
-				<form:input type="number" path="rating" />
+			<div class:"flex">
+				<form:label path="amount">Amount</form:label>
+				<form:input type="number" path="amount" />
 			</div>
-			<div>
-				<form:label path="notes">Notes</form:label>
-				<form:input type="text" path="notes" />
+			<div class:"flex">
+				<form:label path="description">Description</form:label>
+				<form:input type="text" path="description" />
 			</div>
+			
+			
 			<input type="submit" value="Submit" />
 		</form:form>
 </div>
