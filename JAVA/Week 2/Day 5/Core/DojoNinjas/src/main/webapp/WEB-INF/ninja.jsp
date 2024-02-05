@@ -23,7 +23,6 @@
 			<form:errors path="*" />
 			<div class="flex">
 				<form:label path="dojo">Dojo </form:label>
-				
 				<form:select path="dojo">
 				<c:forEach items="${dojos}" var="dojo">
 				<option value="${dojo.id}">
@@ -34,7 +33,6 @@
 			</div>
 			<div>
 				<form:label path="firstname">Title</form:label>
-
 				<form:input path="firstname"/>
 			</div>
 			<div>
