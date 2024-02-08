@@ -1,13 +1,16 @@
 package com.dojo.loginregistration.models;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -48,6 +51,14 @@ public class User {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updatedAt;
 
+//	1:M
+	@OneToMany(mappedBy="user", fetch = FetchType.LAZY)
+	private List<Book> userBooks;
+	
+	
+	
+	
+	
 //	----- methods ---
 // other getters and setters removed for brevity
 
@@ -61,7 +72,15 @@ protected void onUpdate() {
 	this.updatedAt = new Date();
 }
 
-    public User() {}
+    public List<Book> getUserBooks() {
+	return userBooks;
+}
+
+public void setUserBooks(List<Book> userBooks) {
+	this.userBooks = userBooks;
+}
+
+	public User() {}
     
 //	----- Getters and Setters ---
     
