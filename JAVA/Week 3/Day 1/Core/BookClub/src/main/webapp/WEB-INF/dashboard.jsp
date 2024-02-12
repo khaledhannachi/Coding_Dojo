@@ -45,20 +45,20 @@
 		<div class="px-3 py-4 flex justify-center">
 			<table class="w-full text-md bg-white shadow-md rounded mb-4">
 				<tbody>
-					<tr class="border-b">
-						<th class="text-left p-3 px-5">ID</th>
-						<th class="text-left p-3 px-5">Tile</th>
-						<th class="text-left p-3 px-5">Author Name</th>
-						<th class="text-left p-3 px-5">Posted By</th>
+					<tr class="border-b bg-gray-900 text-white font-bold">
+						<th class="text-center p-3 px-5">ID</th>
+						<th class="text-center p-3 px-5">Tile</th>
+						<th class="text-center p-3 px-5">Author Name</th>
+						<th class="text-center p-3 px-5">Posted By</th>
 						<th></th>
 					</tr>
 
 					<c:forEach items="${allBooks}" var="oneBook">
 						<tr class="border-b hover:bg-blue-100">
-							<td class="p-3 px-5">${oneBook.id}</td>
-							<td class="p-3 px-5"><a href="/books/${oneBook.id}">${oneBook.title}</a></td>
-							<td class="p-3 px-5">${oneBook.author}</td>
-							<td class="p-3 px-5 flex justify-end">${oneBook.user.userName }</td>
+							<td class="p-3 px-5 text-center">${oneBook.id}</td>
+							<td class="p-3 px-5 text-center"><a href="/books/${oneBook.id}">${oneBook.title}</a></td>
+							<td class="p-3 px-5 text-center">${oneBook.author}</td>
+							<td class="p-3 px-5 flex justify-center gap-4 text-center">${oneBook.user.userName }</td>
 					
 							</td>
 						</tr>

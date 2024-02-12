@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!-- c:out ; c:forEach etc. --> 
@@ -16,37 +17,35 @@
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
 <body>
-  <div class="flex justify-center items-center w-full">
 
-
-  <form:form action="/books/${book.id}" method="put" modelAttribute="book">
-    <div class="bg-white px-10 py-8 rounded-xl w-screen shadow-md max-w-sm">
-      <div class="space-y-4">
-        <h1 class="text-center text-2xl font-bold text-gray-600">Edit a Book !</h1>
-        <div>
-          <form:label path="title" for="number" class="block mb-1 text-gray-600 font-semibold">Title </form:label>
-          <form:input path="title" type="text" name="title" class="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full" />
-        				<form:errors path="title" class="text-red-600" />
-        
-        </div>
-        <div>
-          <form:label path="author" for="city" class="block mb-1 text-gray-600 font-semibold">Author</form:label>
-          <form:input path="author" type="text" name="city" class="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full" />
-        <form:errors path="author" class="text-red-600" />
-        </div>
-       
-        <div>
-          <form:label path="thoughts" for="someNice" class="block mb-1 text-gray-600 font-semibold">My thoughts</form:label>
-          <form:input path="thoughts" type="textarea" name="thoughts" class="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full" />
-        <form:errors path="thoughts" class="text-red-600" />
-        </div>
-
-      </div>
-      <button type="submit" value="Create" class="mt-4 w-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-indigo-100 py-2 rounded-md text-lg tracking-wide">Submit</button>
+  <div class="max-w-4xl mx-auto mt-16 flex w-full flex-col border rounded-lg bg-white p-8 shadow-md">
+ <form:form action="/books/${book.id}" method="put" modelAttribute="book">
+ <h1 class="text-center text-2xl font-bold text-gray-600">Edit a Book!</h1>   
+    <div class="mb-4">
+        <form:label path="title" class="block mb-1 text-gray-600 font-semibold">Title</form:label>
+        <form:input path="title" class="w-full rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200" />
+           				<form:errors path="title" class="text-red-600" />
+   
     </div>
- </form:form>
+    <div class="mb-4">
+        <form:label path="author" class="block mb-1 text-gray-600 font-semibold">Author</form:label>
+        <form:input path="author" class="w-full rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200" />
+                <form:errors path="author" class="text-red-600" />
+    
+    </div>
+    <div class="mb-4">
+        <form:label path="thoughts" class="block mb-1 text-gray-600 font-semibold">My thoughts</form:label>
+        <form:textarea path="thoughts" class="h-32 w-full resize-none rounded border border-gray-300 bg-white py-1 px-3 text-base leading-6 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"></form:textarea>
+            <form:errors path="thoughts" class="text-red-600" />
+    
+    </div>
+      <button type="submit" value="Create" class="mt-4 w-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-indigo-100 py-2 rounded-md text-lg tracking-wide">Submit</button>
+    </form:form>
 </div>
 
 
 </body>
 </html>
+
+
+ 

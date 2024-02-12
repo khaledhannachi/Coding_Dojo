@@ -16,13 +16,10 @@
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-	<div
-		class="h-screen  flex justify-center items-center w-full text-black">
-		<div
-			class="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-			<div class="p-6">
 
-				<h1>
+<div class="max-w-2xl mx-auto text-center mt-20">
+
+    		<h1 class="text-4xl font-bold tracking-tight text-black sm:text-5xl xl:text-5xl sm:tracking-tight">
 					<c:choose>
 						<c:when test="${book.user.id==user_id }">
 							<span class="text-orange-700">You</span>
@@ -33,7 +30,7 @@
 					</c:choose>
 					read ${book.title} by ${book.author}
 				</h1>
-				<h2>
+				<h2 class="text-xl font-bold tracking-tight text-black sm:text-lg xl:text-4xl sm:tracking-tight">
 					Here are
 					<c:choose>
 						<c:when test="${book.user.id==user_id }">
@@ -45,13 +42,11 @@
 					</c:choose>
 					thoughts:
 				</h2>
-
-				<p
-					class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-					${book.thoughts}</p>
-			</div>
-			<div class="p-6 pt-0">
-				<c:if test="${book.user.id==user_id }">
+    <p class="mt-6 text-lg leading-7 text-black/70 lg:leading-8 lg:text-xl">
+        	${book.thoughts}
+    </p>
+    <div class="mt-8 flex justify-end">
+       <c:if test="${book.user.id==user_id }">
 					<button type="button"
 						class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">
 						<a href="/books/edit/${book.id }">Edit</a>
@@ -64,9 +59,9 @@
 
 					</form>
 				</c:if>
-			</div>
-		</div>
-	</div>
-
+    </div>
+    <p class="mt-8 text-sm font-normal text-gray-600">
+    </p>
+</div>
 </body>
 </html>
